@@ -25,6 +25,8 @@ import { AppService } from './app.service';
 import { FileDataDto } from './dtos/file-data.dto';
 import { SetMetadataDto } from './dtos/set-metadata.dto';
 import { UploadIpfsDto } from './dtos/upload-ipfs.dto';
+import { Timestamp } from 'rxjs';
+import { type } from 'os';
 
 @ApiTags('file')
 @Controller()
@@ -193,7 +195,7 @@ export class AppController {
     return savedObj;
   }
 
-  @Post('metadata')
+  @Post('metadata/:id/:name/:description/:author/:type/:class/:score')
   @Header("content-type", "application/json")
   @ApiOperation({
     summary: 'Register file metadata',
@@ -209,14 +211,29 @@ export class AppController {
     type: HttpException,
   })
   @ApiParam({
-    name: 'name',
-    description: 'Name for Metadata',
+    name: 'id',
+    description: 'ID in DB to attach Metadata to ',
   })
-  setMetadata(@Param('name') name: string, @Body() body: SetMetadataDto) {
+  setMetadata(@Param('id') id: number, 
+  @Param('name') name: string, @Param('description') description: string,
+  @Param('author') author: string, @Param('type') type: string,
+  @Param('class') class_: string, @Param('score') score: number,
+  @Body() body: SetMetadataDto) {
     console.log(name);
+    console.log(score);
+    console.log(id)
     body.metadata = {
-      "name": "hello"
+      "name": name,
+      "description": description,
+      "author": author,
+      "timestamp": Date.now() / 1000,
+      "type": type,
+      "class": class_,
+      "score": score
+  
     };
+
+    body.id = id;
     const updatedObj = this.appService.setMetadata(body.id, body.metadata);
     return updatedObj;
   }

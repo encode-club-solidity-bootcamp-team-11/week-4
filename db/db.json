@@ -7,7 +7,13 @@
             "size": 67009
         },
         "metadata": {
-            "name": "hello"
+            "name": "nigel",
+            "description": "no swag",
+            "author": "nigelnoswag",
+            "timestamp": 1659853894.152,
+            "type": "male",
+            "class": "teacher",
+            "score": "2"
         }
     },
     "1": {
@@ -16,6 +22,15 @@
             "mimetype": "image/png",
             "storageName": "e1448767f7dbaf671d02224d0ae43982",
             "size": 52087
+        },
+        "metadata": {
+            "name": "phonsoswag",
+            "description": "much swag",
+            "author": "phonsoswag",
+            "timestamp": 1659853914.848,
+            "type": "male",
+            "class": "engineer",
+            "score": "4"
         }
     }
 }
