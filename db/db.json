@@ -7,13 +7,14 @@
             "size": 67009
         },
         "metadata": {
-            "name": "nigel",
-            "description": "no swag",
-            "author": "nigelnoswag",
-            "timestamp": 1659853894.152,
-            "type": "male",
-            "class": "teacher",
-            "score": "2"
+            "name": "testin",
+            "description": "tesing",
+            "author": "tesing",
+            "timestamp": 1659880652.404,
+            "type": "test",
+            "class": "teting",
+            "score": "20",
+            "image": "testing.url"
         }
     },
     "1": {
@@ -24,13 +25,31 @@
             "size": 52087
         },
         "metadata": {
-            "name": "phonsoswag",
-            "description": "much swag",
-            "author": "phonsoswag",
-            "timestamp": 1659853914.848,
+            "name": "asdf",
+            "description": "sadf",
+            "author": "asdf",
+            "timestamp": 1659882242.143,
+            "type": "asdf",
+            "class": "asdf",
+            "score": "12",
+            "image": "asdf"
+        }
+    },
+    "2": {
+        "file": {
+            "fileName": "image3.png",
+            "mimetype": "image/png",
+            "storageName": "1851b1c56e203d6efbb4ba0a8594f401",
+            "size": 55487
+        },
+        "metadata": {
+            "name": "samnang",
+            "description": "samnang's image",
+            "author": "samnang author",
+            "timestamp": 1659879627.882,
             "type": "male",
-            "class": "engineer",
-            "score": "4"
+            "class": "programmer",
+            "score": "8"
         }
     }
 }

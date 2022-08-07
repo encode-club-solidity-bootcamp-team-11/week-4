@@ -47,12 +47,23 @@ export class AppService {
       return { error };
     }
     if (!file) return false;
-    this.db.push(`/${fileId}/metadata`, metadata);
+    this.db.push(`/${fileId}/metadata`, [metadata, name]);
     return this.get(fileId);
   }
 
   getAll() {
-    return this.db.getData('/');
+    const data = this.db.getData('/');
+    const mapped = Object.entries(data).map(([k,v]) => {
+      return {
+        "name": v["metadata"]["name"],
+        "description": v["metadata"]["description"],
+        "image": v["metadata"]["image"],
+        "external_url": `http://localhost:3000/tokenmetadata/${k}`
+      };
+    });
+    console.log(mapped);
+    return mapped;
+    // return this.db.getData('/');
   }
 
   get(fileId: number) {

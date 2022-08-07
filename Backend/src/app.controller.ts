@@ -74,7 +74,7 @@ export class AppController {
     }
   }
 
-  @Get(':id')
+  @Get('tokenmetadata/:id')
   @ApiOperation({
     summary: 'Get element by id',
     description: 'Gets the element at the requested index',
@@ -220,9 +220,7 @@ export class AppController {
   @Param('class') class_: string, @Param('score') score: number,
   @Param('image') image: string,
   @Body() body: SetMetadataDto) {
-    console.log(name);
-    console.log(score);
-    console.log(id)
+  
     body.metadata = {
       "name": name,
       "description": description,
@@ -234,7 +232,7 @@ export class AppController {
       "image": image
   
     };
-
+    // body.description = description;
     body.id = id;
     const updatedObj = this.appService.setMetadata(body.id, body.metadata);
     return updatedObj;
