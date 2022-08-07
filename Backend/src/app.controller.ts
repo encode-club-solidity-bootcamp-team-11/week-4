@@ -74,7 +74,7 @@ export class AppController {
     }
   }
 
-  @Get(':id')
+  @Get('tokenmetadata/:id')
   @ApiOperation({
     summary: 'Get element by id',
     description: 'Gets the element at the requested index',
@@ -91,6 +91,29 @@ export class AppController {
   async getData(@Param('id') id: number) {
     try {
       const result = this.appService.get(id);
+      return result;
+    } catch (error) {
+      throw new HttpException(error.message, 503);
+    }
+  }
+
+  @Get('NFT_uri/:id')
+  @ApiOperation({
+    summary: 'Get element by id',
+    description: 'Gets the element at the requested index',
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'Element',
+  })
+  @ApiResponse({
+    status: 503,
+    description: 'The server is not configured correctly',
+    type: HttpException,
+  })
+  async getNFT_id(@Param('id') id: number) {
+    try {
+      const result = this.appService.getNFT_id(id);
       return result;
     } catch (error) {
       throw new HttpException(error.message, 503);
@@ -220,9 +243,7 @@ export class AppController {
   @Param('class') class_: string, @Param('score') score: number,
   @Param('image') image: string,
   @Body() body: SetMetadataDto) {
-    console.log(name);
-    console.log(score);
-    console.log(id)
+  
     body.metadata = {
       "name": name,
       "description": description,
@@ -234,7 +255,7 @@ export class AppController {
       "image": image
   
     };
-
+    // body.description = description;
     body.id = id;
     const updatedObj = this.appService.setMetadata(body.id, body.metadata);
     return updatedObj;
