@@ -195,7 +195,7 @@ export class AppController {
     return savedObj;
   }
 
-  @Post('metadata/:id/:name/:description/:author/:type/:class/:score')
+  @Post('metadata/:id/:name/:description/:author/:type/:class/:score/:image')
   @Header("content-type", "application/json")
   @ApiOperation({
     summary: 'Register file metadata',
@@ -218,6 +218,7 @@ export class AppController {
   @Param('name') name: string, @Param('description') description: string,
   @Param('author') author: string, @Param('type') type: string,
   @Param('class') class_: string, @Param('score') score: number,
+  @Param('image') image: string,
   @Body() body: SetMetadataDto) {
     console.log(name);
     console.log(score);
@@ -229,7 +230,8 @@ export class AppController {
       "timestamp": Date.now() / 1000,
       "type": type,
       "class": class_,
-      "score": score
+      "score": score,
+      "image": image
   
     };
 

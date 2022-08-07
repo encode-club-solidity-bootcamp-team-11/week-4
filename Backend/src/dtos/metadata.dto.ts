@@ -49,4 +49,9 @@ export class MetadataDto {
     examples: [0, -1, 42, 9876543210],
   })
   score?: number;
+  @ApiProperty({
+    required: false,
+    description: 'Image of NFT'
+  })
+  image?: string;
 }
