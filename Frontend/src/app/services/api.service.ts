@@ -12,6 +12,6 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getNFTCollection() {
-    return this.http.get<[]>("https://run.mocky.io/v3/4503bb66-3512-4690-928b-bd8efc6157be");
+    return this.http.get<[]>(this.apiUrl);
   }
 }
