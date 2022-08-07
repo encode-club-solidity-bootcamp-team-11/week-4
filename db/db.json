@@ -1,0 +1,36 @@
+{
+    "0": {
+        "file": {
+            "fileName": "image1.png",
+            "mimetype": "image/png",
+            "storageName": "322918224da0206f19e40215cb680e2e",
+            "size": 67009
+        },
+        "metadata": {
+            "name": "nigel",
+            "description": "no swag",
+            "author": "nigelnoswag",
+            "timestamp": 1659853894.152,
+            "type": "male",
+            "class": "teacher",
+            "score": "2"
+        }
+    },
+    "1": {
+        "file": {
+            "fileName": "image2.png",
+            "mimetype": "image/png",
+            "storageName": "e1448767f7dbaf671d02224d0ae43982",
+            "size": 52087
+        },
+        "metadata": {
+            "name": "phonsoswag",
+            "description": "much swag",
+            "author": "phonsoswag",
+            "timestamp": 1659853914.848,
+            "type": "male",
+            "class": "engineer",
+            "score": "4"
+        }
+    }
+}
