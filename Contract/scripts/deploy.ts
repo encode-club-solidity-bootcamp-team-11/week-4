@@ -8,7 +8,7 @@ async function main() {
 
   console.log("Deploying NFT Collection contract");
   const tokenContractFactory = getContractFactory(wallet);
-  const tokenContract = await tokenContractFactory.deploy([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  const tokenContract = await tokenContractFactory.deploy([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
   await tokenContract.deployed();
   console.log(`Contract deployed at ${tokenContract.address}`);
 }
