@@ -97,6 +97,29 @@ export class AppController {
     }
   }
 
+  @Get('NFT_uri/:id')
+  @ApiOperation({
+    summary: 'Get element by id',
+    description: 'Gets the element at the requested index',
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'Element',
+  })
+  @ApiResponse({
+    status: 503,
+    description: 'The server is not configured correctly',
+    type: HttpException,
+  })
+  async getNFT_id(@Param('id') id: number) {
+    try {
+      const result = this.appService.getNFT_id(id);
+      return result;
+    } catch (error) {
+      throw new HttpException(error.message, 503);
+    }
+  }
+
   @Get('file/:id')
   @ApiOperation({
     summary: 'Get file of element by id from server storage',

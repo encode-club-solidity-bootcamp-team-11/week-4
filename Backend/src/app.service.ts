@@ -47,7 +47,7 @@ export class AppService {
       return { error };
     }
     if (!file) return false;
-    this.db.push(`/${fileId}/metadata`, [metadata, name]);
+    this.db.push(`/${fileId}/metadata`, metadata);
     return this.get(fileId);
   }
 
@@ -58,7 +58,7 @@ export class AppService {
         "name": v["metadata"]["name"],
         "description": v["metadata"]["description"],
         "image": v["metadata"]["image"],
-        "external_url": `http://localhost:3000/tokenmetadata/${k}`
+        "external_url": `http://localhost:3000/NFT_uri/${k}`
       };
     });
     console.log(mapped);
@@ -68,7 +68,20 @@ export class AppService {
 
   get(fileId: number) {
     return this.db.getData(`/${fileId}`);
+    
   }
+
+  getNFT_id(tokenId: number) {
+    const data = this.db.getData(`/${tokenId}`);
+
+    return {
+        "name": data["metadata"]["name"],
+        "description": data["metadata"]["description"],
+        "image": data["metadata"]["image"],
+        "external_url": `http://localhost:3000/NFT_uri/${tokenId}`
+      };
+  }
+
 
   getFileStream(filename: string) {
     const fileStream = createReadStream(`../upload/${filename}`);
