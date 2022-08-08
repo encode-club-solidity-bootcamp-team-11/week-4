@@ -11,6 +11,8 @@
 * Integrate this NFT Collection contract and APIs in a frontend application to display NFTs metadata and images
 * (Bonus) provide wallet functions in the frontend to buy, transfer, allow, transfer from and burn NFTs
 
+![NFT Collection](./screenshots/my-nft-collection.png?raw=true "NFT Collection")
+
 ## How to Run
 
 ### Frontend
