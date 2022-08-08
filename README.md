@@ -23,6 +23,13 @@ yarn install
 yarn run start
 ```
 
+### Backend
+```shell
+cd Backend
+yarn install
+yarn start:dev
+```
+
 ## Team (Group 11)
 
 * Phonso (breedmasterswag#2193)
