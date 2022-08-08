@@ -30,7 +30,7 @@ yarn install
 yarn start:dev
 ```
 
-Use the API to populate the DB, register images w/ IPFS, and update the metadata 
+Use the API to populate the DB, register images w/ IPFS, and update the metadata among other functions
 - http://localhost:3000/docs/
 
 ## Team (Group 11)
