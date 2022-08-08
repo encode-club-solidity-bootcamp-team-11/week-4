@@ -30,6 +30,9 @@ yarn install
 yarn start:dev
 ```
 
+Use the API to populate the DB, register images w/ IPFS, and update the metadata 
+- http://localhost:3000/docs/
+
 ## Team (Group 11)
 
 * Phonso (breedmasterswag#2193)
