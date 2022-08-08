@@ -1,6 +1,5 @@
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { expect } from "chai";
-import { BytesLike } from "ethers";
 import { ethers } from "hardhat";
 import { MyNFTCollection } from "../typechain-types";
 

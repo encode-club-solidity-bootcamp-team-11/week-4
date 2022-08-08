@@ -18,9 +18,9 @@ function getWallet(): Wallet {
 }
 
 function getContractFactory(wallet: Wallet) {
-  const provider = new ethers.providers.InfuraProvider(
+  const provider = new ethers.providers.AlchemyProvider(
     "goerli",
-    process.env.INFURA_PROJ_ID
+    process.env.ALCHEMY_API_KEY
   );
   const signer = wallet.connect(provider);
   return new ethers.ContractFactory(

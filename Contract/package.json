@@ -1,6 +1,9 @@
 {
   "name": "Contract",
   "packageManager": "yarn@3.2.1",
+  "scripts": {
+    "deploy": "ts-node scripts/deploy.ts"
+  },
   "devDependencies": {
     "@ethersproject/abi": "^5.4.7",
     "@ethersproject/providers": "^5.4.7",
